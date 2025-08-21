@@ -63,61 +63,7 @@ export default function AutomationSection() {
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="mt-16 text-center">
-        <h2 className="text-2xl font-bold mb-2">Support, Training, &</h2>
-        <h2 className="text-2xl font-bold text-blue-600 mb-8">Onboarding</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {/* Box 1 */}
-          <div className="relative border border-gray-200 rounded-2xl shadow-md overflow-hidden bg-white flex flex-col">
-            <video autoPlay loop muted playsInline className="w-full h-40 object-cover">
-              <source src="/videos/training.mp4" type="video/mp4" />
-            </video>
-            <div className="p-4 flex-1">
-              <h3 className="font-semibold">On Demand Training</h3>
-              <p className="text-gray-600 text-sm mt-2">
-                Learn Accqrate Books in under 60 minutes; video modules for every type.
-              </p>
-              <a href="#" className="text-blue-600 font-medium text-sm mt-3 inline-block">
-                Book An Appointment →
-              </a>
-            </div>
-          </div>
-
-          {/* Box 2 */}
-          <div className="relative border border-gray-200 rounded-2xl shadow-md overflow-hidden bg-white flex flex-col">
-            <video autoPlay loop muted playsInline className="w-full h-40 object-cover">
-              <source src="/videos/support.mp4" type="video/mp4" />
-            </video>
-            <div className="p-4 flex-1">
-              <h3 className="font-semibold">24/7 Local Support</h3>
-              <p className="text-gray-600 text-sm mt-2">
-                In English & Arabic—phone, WhatsApp, email, or chat.
-              </p>
-              <a href="tel:+971505515388" className="text-blue-600 font-medium text-sm mt-3 inline-block">
-                +971505515388 →
-              </a>
-            </div>
-          </div>
-
-          {/* Box 3 */}
-          <div className="relative border border-gray-200 rounded-2xl shadow-md overflow-hidden bg-white flex flex-col">
-            <video autoPlay loop muted playsInline className="w-full h-40 object-cover">
-              <source src="/videos/knowledge.mp4" type="video/mp4" />
-            </video>
-            <div className="p-4 flex-1">
-              <h3 className="font-semibold">Knowledge Center</h3>
-              <p className="text-gray-600 text-sm mt-2">
-                Step-by-step Guides for every process.
-              </p>
-              <a href="#" className="text-blue-600 font-medium text-sm mt-3 inline-block">
-                Knowledge Center →
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Why Choose Section */}
       <div className="mt-20 bg-[#F2F2F2] p-6  -mx-4 font-inter  text-center">
