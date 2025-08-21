@@ -117,7 +117,7 @@ export default function AccountSections() {
 
         <div className="mt-10">
           <video className=" w-full" autoPlay muted loop>
-            <source src="videos/account-receivables.mp4" type="video/mp4" />
+            <source src="videos/account-payables.mp4" type="video/mp4" />
           </video>
         </div>
       </section>

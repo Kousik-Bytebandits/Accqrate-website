@@ -73,7 +73,7 @@ export default function AccountSections() {
 
         <div className="mt-8">
           <video className="rounded-lg w-full bg-gray-300" autoPlay muted loop>
-            <source src="videos/financial-statements.mp4" type="video/mp4" />
+            <source src="videos/transform-operations.mp4" type="video/mp4" />
           </video>
         </div>
       </section>
@@ -113,7 +113,7 @@ export default function AccountSections() {
 
         <div className="mt-8">
           <video className="rounded-lg w-full bg-gray-300" autoPlay muted loop>
-            <source src="videos/seamless-integrartion.mp4" type="video/mp4" />
+            <source src="videos/seamless-integration.mp4" type="video/mp4" />
           </video>
         </div>
       </section>

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { FaChevronDown , FaChevronUp} from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function AutomationSection() {
-  // Dropdown items with label + content
   const dropdowns = [
     {
       label: "AI Bank Reconciliation",
@@ -24,7 +24,6 @@ export default function AutomationSection() {
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
-
   const toggleDropdown = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
@@ -41,7 +40,6 @@ export default function AutomationSection() {
             Let AI handle the repetitive—free your team for what matters.
           </p>
 
-          {/* Collapsible Dropdowns */}
           <div className="space-y-4 w-[280px] text-[14px]">
             {dropdowns.map((dropdown, idx) => (
               <div key={idx} className="border-b border-black">
@@ -63,12 +61,212 @@ export default function AutomationSection() {
         </div>
       </div>
 
+      
+      {/* Bottom Section */}
+<div className="mt-16 mx-auto px-2 font-inter">
+  {/* Heading */}
+  <div className="text-center mb-10 ">
+    <h2 className="text-[24px] font-semibold ">Support, Training, &</h2>
+    <h2 className="text-[24px] font-semibold text-[#1976D2] mb-6">Onboarding</h2>
+  </div>
+
+  {/* First Row */}
+  <div className="grid grid-cols-2 md:grid-cols-2 gap-4 items-center mb-10">
+    {/* Left Side Text */}
+    <div>
+      <p className="text-[14px] text-base leading-relaxed">
+        Expert onboarding for ZATCA compliance software— get your team ready for
+        e-invoicing in KSA, fast.
+      </p>
+    </div>
+
+    {/* Right Side Box */}
+    <div className="relative w-full h-[250px]">
+      {/* Blue Outer */}
+      <div
+        className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
+        style={{
+          clipPath:
+            "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
+        }}
+      >
+        {/* White Inner */}
+        <div
+          className="relative w-full h-full bg-white rounded-lg flex flex-col text-left"
+          style={{
+            clipPath:
+              "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
+          }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-20 object-cover rounded-t-lg"
+          >
+            <source src="/videos/on-demand-training.mp4" type="video/mp4" />
+          </video>
+
+          <div className="p-2 flex-1">
+            <h3 className="font-semibold text-[14px] text-center">
+              On Demand Training
+            </h3>
+            <p className="text-[#737373] text-[12px] mt-2 text-center">
+              Learn Accqrate Books in under 60 minutes; video modules for every
+              type.
+            </p>
+            <p
+              
+              className="absolute bottom-1 left-2 text-[#1976D2] font-bold leading-tight text-[12px]  inline-block"
+            >
+              Book An <br /> Appointment
+            </p>
+          </div>
+        </div>
+      </div>
+
      
+      <div className="pointer-events-none absolute inset-0 z-20">
+        <div
+          className="absolute inset-0 bg-[#1976D2] rounded-lg"
+          style={{
+            clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
+          }}
+        />
+        <div className="absolute  right-6 bottom-1 text-white text-lg font-bold">
+          <FaArrowRightLong  className="text-[16px]" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Second Row */}
+  <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+    {/* Box 1 */}
+    <div className="relative w-full h-[250px]">
+      <div
+        className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
+        style={{
+          clipPath:
+            "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
+        }}
+      >
+        <div
+          className="relative w-full h-full bg-white rounded-lg flex flex-col text-left"
+          style={{
+            clipPath:
+              "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
+          }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-24 object-cover rounded-t-lg "
+          >
+            <source src="/videos/local-support.mp4" type="video/mp4" />
+          </video>
+
+          <div className="p-2 flex-1 ">
+            <h3 className="font-bold text-[14px] text-center">
+              24/7 Local Support
+            </h3>
+            <p className="text-[#737373] text-[12px] mt-2 text-center">
+              In English & Arabic—phone, WhatsApp, email, or chat.
+            </p>
+            <p
+              className="absolute bottom-4 left-2 text-[#1976D2] text-left font-bold text-[11px] mt-3 inline-block"
+            >
+              +971505515388
+            </p>
+          </div>
+        </div>
+      </div>
+
+     
+      <div className="pointer-events-none absolute inset-0 z-20">
+        <div
+          className="absolute inset-0 bg-[#1976D2] rounded-lg"
+          style={{
+            clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
+          }}
+        />
+        <div className="absolute right-6 bottom-1 text-white text-sm font-bold">
+          <FaArrowRightLong  className="text-[16px]" />
+        </div>
+      </div>
+    </div>
+
+    {/* Box 2 */}
+    <div className="relative w-full h-[250px]">
+      <div
+        className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
+        style={{
+          clipPath:
+            "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
+        }}
+      >
+        <div
+          className="relative w-full h-full bg-white rounded-lg flex flex-col text-left"
+          style={{
+            clipPath:
+              "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
+          }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-24 object-cover rounded-t-lg"
+          >
+            <source src="/videos/knowledge-center.mp4" type="video/mp4" />
+          </video>
+
+          <div className="p-2 flex-1">
+            <h3 className="font-bold text-[14px] text-center">
+              Knowledge Center
+            </h3>
+            <p className="text-[#737373] text-[12px] mt-2 text-center">
+              Step-by-step Guides for every process.
+            </p>
+            <p
+
+              className="absolute bottom-1 left-2 text-[#1976D2] font-bold leading-tight text-[12px] mt-3 inline-block"
+            >
+              Knowledge <br /> Center
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="pointer-events-none absolute inset-0 z-20">
+        <div
+          className="absolute inset-0 bg-[#1976D2] rounded-lg"
+          style={{
+            clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
+          }}
+        />
+        <div className="absolute right-6 bottom-1 text-white text-sm font-bold">
+          <FaArrowRightLong  className="text-[16px]" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
       {/* Why Choose Section */}
       <div className="mt-20 bg-[#F2F2F2] p-6  -mx-4 font-inter  text-center">
         <h2 className="text-[24px]  font-bold mb-4">
-          Why Choose Accqrate <span className="text-[#1976D2]"><br/>Books</span>?
+          Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
         </h2>
 
         <img
