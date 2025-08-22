@@ -220,14 +220,17 @@ export default function FeatureSection() {
         </p>
       </div>
 
-        <div className="hidden md:block  mt-24 bg-[#F2F2F2] p-16 -mx-4 h-[240px] w-screen text-left">
-        <p className="text-[30px] mb-2 ml-20 max-w-5xl">
-          “We transitioned our entire accounting system in one afternoon—no external consultants needed.”
-        </p>
-        <p className="text-fluid-body text-black-400 text-right max-w-6xl">
-          — CFO, Riyadh
-        </p>
-      </div>
+       <div className="bg-[#F2F2F2] py-12 md:py-20 px-6 md:px-16 mt-24">
+  <div className="max-w-5xl mx-auto">
+    <p className="text-lg md:text-2xl lg:text-[30px] font-normal leading-relaxed text-gray-900">
+      “We transitioned our entire accounting system in one afternoon—no external consultants needed.”
+    </p>
+    <p className="mt-4 lg:text-[20px] md:text-base text-gray-600 text-right">
+      — CFO, Riyadh
+    </p>
+  </div>
+</div>
+
 
       {/* -------- New Section: ZATCA Compliance -------- */}
      <div className="mt-12 font-inter text-center px-4">
