@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}", // scan everything inside src/
+    "./src/**/*.{js,ts,jsx,tsx,mdx}", 
   ],
   theme: {
     extend: {
@@ -10,7 +10,7 @@ module.exports = {
       },
        fontSize: {
         'fluid-h1': 'clamp(2.5rem, 6vw, 4rem)',   // 40px → 64px
-        'fluid-h2': 'clamp(1.5rem, 4vw, 2.25rem)', // 24px → 36px
+        'fluid-h2': 'clamp(1.5rem, 4vw, 2.35rem)', // 24px → 36px
         'fluid-body': 'clamp(1rem, 2.5vw, 1.25rem)', // 16px → 20px
         'fluid-small': 'clamp(0.875rem, 2vw, 1rem)', // 14px → 16px
       },

@@ -31,16 +31,16 @@ export default function AutomationSection() {
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       {/* Top Section */}
-      <div className="bg-[#D9D9D9] -mx-4 p-4 rounded-2xl">
-        <div className=" bg-white max-w-3xl mx-auto text-left border border-gray-200 rounded-2xl shadow-md p-6">
-          <h2 className="text-[24px] font-semibold text-[#1976D2] mb-4">
+      <div className="bg-[#D9D9D9] -mx-4 md:w-screen md:-mx-8 md:rounded-lg md:p-8 p-4 rounded-2xl">
+        <div className=" bg-white md:h-[615px] mx-auto text-left border border-gray-200 rounded-2xl shadow-md p-6">
+          <h2 className="text-[24px] md:text-[38px] font-semibold text-[#1976D2] mb-4">
             AI-Driven Automation
           </h2>
-          <p className=" mb-6 text-[14px]">
+          <p className=" mb-6 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
             Let AI handle the repetitive—free your team for what matters.
           </p>
 
-          <div className="space-y-4 w-[280px] text-[14px]">
+          <div className="space-y-4 w-[280px] text-[14px] md:text-[16px] md:font-medium md:space-y-6 md:mt-10">
             {dropdowns.map((dropdown, idx) => (
               <div key={idx} className="border-b border-black">
                 <button
@@ -63,7 +63,7 @@ export default function AutomationSection() {
 
       
       {/* Bottom Section */}
-<div className="mt-16 mx-auto px-2 font-inter">
+<div className="mt-16 mx-auto px-2 font-inter md:hidden">
   {/* Heading */}
   <div className="text-center mb-10 ">
     <h2 className="text-[24px] font-semibold ">Support, Training, &</h2>
@@ -264,7 +264,7 @@ export default function AutomationSection() {
 
 
       {/* Why Choose Section */}
-      <div className="mt-20 bg-[#F2F2F2] p-6  -mx-4 font-inter  text-center">
+      <div className="mt-20 bg-[#F2F2F2] p-6 md:hidden -mx-4 font-inter  text-center">
         <h2 className="text-[24px]  font-bold mb-4">
           Why Choose Accqrate <span className="text-[#1976D2]"><br />Books</span>?
         </h2>

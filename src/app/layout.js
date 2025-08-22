@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import Footer from "@/components/Footer";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}>
         {children}
+        <Footer />
       </body>
     </html>
   );

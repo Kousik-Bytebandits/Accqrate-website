@@ -38,125 +38,146 @@ export default function AccountSections() {
     <div className="space-y-10 px-4 mb-10">
      
       {/* ================= Finance Operations ================= */}
-      <section className="bg-[#E8F1FB] font-inter py-6 px-4 rounded-xl max-w-md mx-auto">
-        <h2 className="text-[#1976D2] text-[22px] font-semibold">
-          Transform Your{" "}
-          <span className="tracking-tight block text-[#1976D2] font-normal">
-            Finance Operations
-          </span>
-        </h2>
-        <p className="mt-3 text-[14px]">
-          Modern accounting isn’t about debits and credits—it’s about business
-          control, speed, and insight.
-        </p>
+     <section className="bg-[#E8F1FB] font-inter md:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-20 mx-auto 
+  md:flex md:px-10 md:mx-20 md:mt-[6%]">
 
-        <div className="mt-4 space-y-4">
-          {operationsDropdowns.map((item, index) => (
-            <div key={index} className="max-w-[250px]">
-              <div
-                onClick={() => toggleDropdown("ops", index)}
-                className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-              >
-                <span className="font-normal text-[15px]">{item.title}</span>
-                <FaChevronDown
-                  className={`transition-transform ${
-                    openIndex === `ops-${index}` ? "rotate-180" : ""
-                  }`}
-                />
-              </div>
-              {openIndex === `ops-${index}` && (
-                <p className="text-[12px] mt-1">{item.content}</p>
-              )}
-            </div>
-          ))}
-        </div>
+  {/* Left Side */}
+  <div className="flex-1 md:max-w-[520px]">
+    <h2 className="text-[#1976D2] text-[22px] md:text-[38px] font-semibold leading-snug">
+      Transform Your{" "}
+      <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
+        Finance Operations
+      </span>
+    </h2>
+    <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+      Modern accounting isn’t about debits and credits—it’s about business
+      control, speed, and insight.
+    </p>
 
-        <div className="mt-8">
-          <video className="rounded-lg w-full bg-gray-300" autoPlay muted loop>
-            <source src="videos/transform-operations.mp4" type="video/mp4" />
-          </video>
+    <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
+      {operationsDropdowns.map((item, index) => (
+        <div key={index} className="max-w-[250px] md:max-w-[400px]">
+          <div
+            onClick={() => toggleDropdown("ops", index)}
+            className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
+          >
+            <span className="font-normal text-[15px] md:text-[16px] md:font-medium">{item.title}</span>
+            <FaChevronDown
+              className={`transition-transform ${
+                openIndex === `ops-${index}` ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+          {openIndex === `ops-${index}` && (
+            <p className="text-[12px] md:text-[14px] mt-1">{item.content}</p>
+          )}
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+
+  {/* Right Side */}
+  <div className="flex-1 mt-8 md:mt-0 md:flex md:justify-start md:items-end">
+    <video className="rounded-lg w-full md:h-[420px] object-contain " autoPlay muted loop>
+      <source src="videos/transform-operations.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
 
       {/* ================= Seamless Integration ================= */}
-      <section className="bg-[#E8F1FB] font-inter py-6 px-4 rounded-xl max-w-md mx-auto">
-        <h2 className="text-[#1976D2] text-[22px] font-semibold">
-          Seamless Integration{" "}
-          <span className="tracking-tight block text-[#1976D2] font-normal">
-            Enterprise Scalability
-          </span>
-        </h2>
-        <p className="mt-3 text-[14px]">
-          Grow with confidence - Accqrate Books is built for business evolution, not just accounting.
-        </p>
+    <section className="bg-[#E8F1FB] font-inter md:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-20 mx-auto 
+  md:flex md:px-10 md:mx-20 md:mt-[6%]">
 
-        <div className="mt-4 space-y-4">
-          {integrationDropdowns.map((item, index) => (
-            <div key={index} className="max-w-[250px]">
-              <div
-                onClick={() => toggleDropdown("int", index)}
-                className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-              >
-                <span className="font-normal text-[15px]">{item.title}</span>
-                <FaChevronDown
-                  className={`transition-transform ${
-                    openIndex === `int-${index}` ? "rotate-180" : ""
-                  }`}
-                />
-              </div>
-              {openIndex === `int-${index}` && (
-                <p className="text-[12px] mt-1">{item.content}</p>
-              )}
-            </div>
-          ))}
-        </div>
+  {/* Left Side */}
+  <div className="flex-1 md:max-w-[520px]">
+    <h2 className="text-[#1976D2] text-[22px] md:text-[38px] font-semibold leading-snug">
+      Seamless Integration{" "}
+      <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
+        Enterprise Scalability
+      </span>
+    </h2>
+    <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+      Grow with confidence - Accqrate Books is built for business evolution, not just accounting.
+    </p>
 
-        <div className="mt-8">
-          <video className="rounded-lg w-full bg-gray-300" autoPlay muted loop>
-            <source src="videos/seamless-integration.mp4" type="video/mp4" />
-          </video>
+    <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
+      {integrationDropdowns.map((item, index) => (
+        <div key={index} className="max-w-[250px] md:max-w-[400px]">
+          <div
+            onClick={() => toggleDropdown("int", index)}
+            className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
+          >
+            <span className="font-normal text-[15px] md:text-[16px] md:font-medium">{item.title}</span>
+            <FaChevronDown
+              className={`transition-transform ${
+                openIndex === `int-${index}` ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+          {openIndex === `int-${index}` && (
+            <p className="text-[12px] md:text-[14px] mt-1">{item.content}</p>
+          )}
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+
+  {/* Right Side */}
+  <div className="flex-1 mt-8 md:mt-0 md:flex md:justify-start md:items-end">
+    <video className="rounded-lg w-full md:h-[420px] object-contain" autoPlay muted loop>
+      <source src="videos/seamless-integration.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
 
       {/* ================= Robust Control ================= */}
-      <section className="bg-[#E8F1FB] font-inter py-6 px-4 rounded-xl max-w-md mx-auto">
-        <h2 className="text-[#1976D2] text-[22px] font-semibold">
-          Robust Control,{" "}
-          <span className="tracking-tight block text-[#1976D2] font-normal">
-            Total Compliance
-          </span>
-        </h2>
-        <p className="mt-3 text-[14px]">
-          Mitigate risk, enforce policy, and maintain visibility.
-        </p>
+     <section className="bg-[#E8F1FB] font-inter md:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-20 mx-auto 
+  md:flex md:px-10 md:mx-20 md:mt-[6%]">
 
-        <div className="mt-4 space-y-4">
-          {controlDropdowns.map((item, index) => (
-            <div key={index} className="max-w-[280px]">
-              <div
-                onClick={() => toggleDropdown("ctrl", index)}
-                className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-              >
-                <span className="font-normal text-[15px]">{item.title}</span>
-                <FaChevronDown
-                  className={`transition-transform ${
-                    openIndex === `ctrl-${index}` ? "rotate-180" : ""
-                  }`}
-                />
-              </div>
-              {openIndex === `ctrl-${index}` && (
-                <p className="text-[12px] mt-1">{item.content}</p>
-              )}
-            </div>
-          ))}
-        </div>
+  {/* Left Side */}
+  <div className="flex-1 md:max-w-[520px]">
+    <h2 className="text-[#1976D2] text-[22px] md:text-[38px] font-semibold leading-snug">
+      Robust Control,{" "}
+      <span className="tracking-tight md:text-[38px] md:mb-10 block text-[#1976D2] font-normal">
+        Total Compliance
+      </span>
+    </h2>
+    <p className="mt-3 text-[14px] md:text-[20px] md:leading-relaxed md:tracking-wide">
+      Mitigate risk, enforce policy, and maintain visibility.
+    </p>
 
-        <div className="mt-8">
-          <video className="rounded-lg w-full bg-gray-300" autoPlay muted loop>
-            <source src="videos/robust-control.mp4" type="video/mp4" />
-          </video>
+    <div className="mt-4 space-y-4 md:space-y-6 md:mt-10">
+      {controlDropdowns.map((item, index) => (
+        <div key={index} className="max-w-[250px] md:max-w-[400px]">
+          <div
+            onClick={() => toggleDropdown("ctrl", index)}
+            className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
+          >
+            <span className="font-normal text-[15px] md:text-[16px] md:font-medium">{item.title}</span>
+            <FaChevronDown
+              className={`transition-transform ${
+                openIndex === `ctrl-${index}` ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+          {openIndex === `ctrl-${index}` && (
+            <p className="text-[12px] md:text-[14px] mt-1">{item.content}</p>
+          )}
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+
+  {/* Right Side */}
+  <div className="flex-1 mt-8 md:mt-0 md:flex md:justify-start md:items-end">
+    <video className="rounded-lg w-full md:h-[420px] object-contain " autoPlay muted loop>
+      <source src="videos/robust-control.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
     </div>
   );
 }
