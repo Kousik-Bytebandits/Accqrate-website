@@ -1,9 +1,10 @@
 .header {
   z-index: 50;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
+/* Hamburger (hidden by default) */
 .hamburger {
   display: none;
   background: none;
@@ -12,27 +13,27 @@
   cursor: pointer;
 }
 
-
-
 .hamburger i {
   color: #333;
 }
 
-@media screen and (max-width: 1023px) {
+/* Show hamburger up to 1280px (xl breakpoint) */
+@media screen and (max-width: 1280px) {
   .hamburger {
     display: block;
   }
 }
 
+/* Header container at very large screens */
 @media (min-width: 1440px) {
-  .items-center {
+  .header-container {
     max-width: 1440px;
-    align-items: center; 
-    justify-content: space-between; 
+    margin: 0 auto; /* center horizontally */
+    align-items: center;
+    justify-content: space-between;
   }
-  .shrink-0{
-    height:26px;
+
+  .header-logo {
+    height: 36px;
   }
 }
-
-

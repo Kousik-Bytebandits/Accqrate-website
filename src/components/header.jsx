@@ -1,4 +1,4 @@
-"use client";
+
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import styles from "../styles/header.module.css";
@@ -88,13 +88,13 @@ const languages = [
 ];
 
 const countries = [
-  { name: "Saudi Arabia", code: "SA", flag: "/images/flag-saudi-arabia.svg" },
-  { name: "UAE", code: "AE", flag: "/images/flag-uae.svg" },
-  { name: "Oman", code: "OM", flag: "/images/flag-oman.svg" },
-  { name: "Bahrain", code: "BH", flag: "/images/flag-bahrain.svg" },
-  { name: "Malaysia", code: "MY", flag: "/images/flag-malaysia.svg" },
-  { name: "Mauritius", code: "MU", flag: "/images/flag-mauritius.svg" },
-  { name: "Jordan", code: "JO", flag: "/images/flag-jordan.svg" },
+  { name: "Saudi Arabia", code: "SA", flag: "/images/images/flag-saudi-arabia.svg" },
+  { name: "UAE", code: "AE", flag: "/images/images/flag-uae.svg" },
+  { name: "Oman", code: "OM", flag: "/images/images/flag-oman.svg" },
+  { name: "Bahrain", code: "BH", flag: "/images/images/flag-bahrain.svg" },
+  { name: "Malaysia", code: "MY", flag: "/images/images/flag-malaysia.svg" },
+  { name: "Mauritius", code: "MU", flag: "/images/images/flag-mauritius.svg" },
+  { name: "Jordan", code: "JO", flag: "/images/images/flag-jordan.svg" },
 ];
 
 
@@ -137,7 +137,7 @@ const LangCountryDropdown = ({
 
       {show && (
         <div
-          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 -full max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
+          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2  max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
         >
           {/* Languages */}
           <div className="mb-2 font-semibold text-black">Select Language</div>
@@ -235,14 +235,14 @@ const Header = () => {
   };
 
   return (
-    <header className={`${styles.header}  w-full bg-white shadow`}>
+    <header className={`${styles.header} w-full bg-white shadow`}>
       <div className="w-full py-2 md:py-3 px-3 md:px-6">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="logo-container">
             <Link href="/" className="shrink-0">
               <img
-                src="/images/logo.svg"
+                src="/images/images/logo.svg"
                 alt="Accqrate Logo"
                 className="h-8 md:h-9 lg:h-10 w-auto cursor-pointer max-w-[80px] sm:max-w-[100px] md:max-w-[140px]"
               />
@@ -252,7 +252,7 @@ const Header = () => {
           {/* Desktop Nav */}
           <nav
             ref={navRef}
-            className="hidden lg:flex items-center justify-around max-w-[1100px] text-[14px] text-gray-600 flex-1"
+            className="hidden xl:flex items-center justify-around max-w-[1100px] text-[14px] text-gray-600 flex-1"
           >
             {menus.map(({ title, href, id, items }) => (
     <div
@@ -294,7 +294,7 @@ const Header = () => {
 </nav>
 
 {/* Right Section (only ≥1024px) */}
-<div className="hidden lg:flex items-center gap-3 shrink-0">
+<div className="hidden xl:flex items-center gap-3 shrink-0">
   <LangCountryDropdown
     selectedLanguage={selectedLanguage}
     setSelectedLanguage={setSelectedLanguage}
@@ -314,7 +314,7 @@ const Header = () => {
 </div>
 
 {/* Mobile/Tablet Section (<1024px) */}
-<div className="flex md:flex lg:hidden items-center gap-3">
+<div className="flex  xl:hidden items-center gap-3">
   <LangCountryDropdown
     selectedLanguage={selectedLanguage}
     setSelectedLanguage={setSelectedLanguage}
