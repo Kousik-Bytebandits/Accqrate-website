@@ -1,100 +1,187 @@
 "use client";
 
-import Link from "next/link";
+import React, { useContext, useState, useEffect } from "react";
+import styles from "../styles/footer.module.css";
+import { LoadingContext } from "../utils/LoadingContext";
+import Skeleton from "../components/skeleton";
 
 export default function Footer() {
+  const { loading } = useContext(LoadingContext);
+  const [isVisible, setIsVisible] = useState(false);
+  const [showSections, setShowSections] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowSections(window.innerWidth >= 1024); // Show sections only on desktop
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+
+    const element = document.getElementById("footerSection");
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+  }, []);
+
+  const sections = [
+    {
+      title: "Accqrate-erp.com",
+      items: [
+        "Home",
+        "Success Stories",
+        "E-Invoicing solution",
+        "Business solution",
+        "ERP solution",
+        "Testimonials",
+      ],
+    },
+    {
+      title: "About",
+      items: [
+        "Company",
+        "Demo Videos",
+        "Careers",
+        "Blogs",
+        "Announcements",
+        "Webinars",
+        "Partner with Us",
+        "FAQs",
+      ],
+    },
+    {
+      title: "Featured Modules",
+      items: [
+        "E-Invoicing Software",
+        "E-Invoicing Middleware",
+        "Accounting Solutions",
+        "Sales Management",
+        "Purchase Management",
+        "Inventory Management",
+        "Fixed Asset Management",
+      ],
+    },
+    {
+      title: "More Modules",
+      items: [
+        "Production Management",
+        "Document Management",
+        "HR & Payroll",
+        "Services",
+        "POS",
+        "CRM",
+      ],
+    },
+    {
+      title: "Data & Safety Management",
+      items: [
+        "Data Security",
+        "Disaster Recovery",
+        "Enhancements and Upgrades",
+        "Application Support and Maintenance",
+        "Terms and Conditions",
+        "Privacy Policy",
+        "Contact Support",
+      ],
+    },
+    {
+      title: "Integrations",
+      items: [
+        "SAP suits",
+        "Oracle suits",
+        "Microsoft suits",
+        "VAT Calculator",
+      ],
+    },
+  ];
+
+  const socialLinks = [
+    { href: "https://www.facebook.com/people/Accqrate/100077291530631/", src: "/images/facebook.svg" },
+    { href: "https://www.linkedin.com/showcase/accqrate", src: "/images/linkedin.svg" },
+    { href: "https://twitter.com/accqrate_erp", src: "/images/twitter.svg" },
+    { href: "https://www.instagram.com/accqrateerp/", src: "/images/instagram.svg" },
+    { href: "https://www.youtube.com/channel/UCAzO34h3KxRrObyRor70D9A", src: "/images/youtube.svg" },
+    { href: "https://www.reddit.com/user/Accqrate_ERP", src: "/images/reddit.svg" },
+    { href: "https://www.snapchat.com/add/accqrate", src: "/images/snapchat.svg" },
+    { href: "https://api.whatsapp.com/send/?phone=966541999357&type=phone_number&app_absent=0", src: "/images/whatsapp.svg" },
+  ];
+
+  if (loading || !isVisible) {
+    return (
+      <footer className={styles.footer} id="footerSection">
+        <div className={styles.container}>
+          {[...Array(6)].map((_, idx) => (
+            <div key={idx}>
+              <Skeleton height="24px" width="60%" className={styles.sectionTitle} />
+              {[...Array(6)].map((_, i) => (
+                <Skeleton
+                  key={i}
+                  height="18px"
+                  width="80%"
+                  className={styles.sectionItem}
+                  style={{ marginBottom: "8px" }}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className={styles.social}>
+          {[...Array(8)].map((_, i) => (
+            <Skeleton key={i} height="20px" width="20px" style={{ marginLeft: "8px" }} />
+          ))}
+        </div>
+        <Skeleton height="20px" width="40%" className={styles.copyright} />
+      </footer>
+    );
+  }
+
   return (
-    <footer className="bg-white hidden md:block border-t border-gray-300 mt-[2%]">
-      <div className="max-w-8xl mx-auto px-6 lg:px-12 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-sm  font-inter">
-          
-          {/* Column 1 */}
-          <div>
-            <h4 className="font-semibold mb-3 text-fluid-body">Accqrate-erp.com</h4>
-            <ul className="space-y-6 text-[#525252] text-[16px]">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="#">Success Stories</Link></li>
-              <li><Link href="#">E-Invoicing solution</Link></li>
-              <li><Link href="#">Business solution</Link></li>
-              <li><Link href="#">ERP solution</Link></li>
-              <li><Link href="#">Testimonials</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 2 */}
-          <div>
-            <h4 className="font-semibold mb-3 text-fluid-body">About</h4>
-            <ul className="space-y-6 text-[#525252] text-[16px]">
-              <li><Link href="#">Company</Link></li>
-              <li><Link href="#">Demo Videos</Link></li>
-              <li><Link href="#">Careers</Link></li>
-              <li><Link href="#">Blogs</Link></li>
-              <li><Link href="#">Announcements</Link></li>
-              <li><Link href="#">Webinars</Link></li>
-              <li><Link href="#">Partner with Us</Link></li>
-              <li><Link href="#">FAQs</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 3 */}
-          <div>
-            <h4 className="font-semibold mb-3 text-fluid-body">Featured Modules</h4>
-            <ul className="space-y-6 text-[#525252] text-[16px]">
-              <li><Link href="#">E-Invoicing Software</Link></li>
-              <li><Link href="#">E-Invoicing Middleware</Link></li>
-              <li><Link href="#">Accounting Solutions</Link></li>
-              <li><Link href="#">Sales Management</Link></li>
-              <li><Link href="#">Purchase Management</Link></li>
-              <li><Link href="#">Inventory Management</Link></li>
-              <li><Link href="#">Fixed Asset Management</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 4 */}
-          <div>
-            <h4 className="font-semibold mb-3 text-fluid-body">More Modules</h4>
-            <ul className="space-y-6 text-[#525252] text-[16px]">
-              <li><Link href="#">Production Management</Link></li>
-              <li><Link href="#">Document Management</Link></li>
-              <li><Link href="#">HR & Payroll</Link></li>
-              <li><Link href="#">Services</Link></li>
-              <li><Link href="#">POS</Link></li>
-              <li><Link href="#">CRM</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 5 */}
-          <div>
-            <h4 className="font-semibold mb-3 text-fluid-body">Data & Safety Management</h4>
-            <ul className="space-y-6 text-[#525252] text-[16px]">
-              <li><Link href="#">Data Security</Link></li>
-              <li><Link href="#">Disaster Recovery</Link></li>
-              <li><Link href="#">Enhancements and Upgrades</Link></li>
-              <li><Link href="#">Application Support and Maintenance</Link></li>
-              <li><Link href="#">Terms and Conditions</Link></li>
-              <li><Link href="#">Privacy Policy</Link></li>
-              <li><Link href="#">Contact Support</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 6 */}
-          <div>
-            <h4 className="font-semibold mb-3 text-fluid-body">Integrations</h4>
-            <ul className="space-y-6 text-[#525252] text-[16px]">
-              <li><Link href="#">SAP suits</Link></li>
-              <li><Link href="#">Oracle suits</Link></li>
-              <li><Link href="#">Microsoft suits</Link></li>
-              <li><Link href="#">VAT Calculator</Link></li>
-            </ul>
-          </div>
+    <footer className={styles.footer} id="footerSection">
+      {showSections && (
+        <div className={styles.container}>
+          {sections.map((section, idx) => (
+            <div key={idx} className={styles.column}>
+              <h3 className={styles.sectionTitle}>{section.title}</h3>
+              {section.items.map((item, i) => (
+                <p key={i} className={styles.sectionItem}>{item}</p>
+              ))}
+            </div>
+          ))}
         </div>
+      )}
 
-        {/* Bottom */}
-        <div className="border-t border-gray-300 mt-10 pt-6 text-center text-[16px] text-gray-600 max-w-5xl mx-auto">
-          © Copyright 2021 - 2025{" "}
-          <Link href="#" className="text-[#194BED] hover:underline">Accqrate</Link>, All rights reserved.
-        </div>
-      </div>
+    <div className={styles.bottomBar}>
+  <div className={styles.social}>
+    {socialLinks.map(({ href, src }, idx) => (
+      <a key={idx} href={href} target="_blank" rel="noopener noreferrer">
+        <img src={src} alt="social icon" className={styles.icon} />
+      </a>
+    ))}
+  </div>
+
+  <div className={styles.copyright}>
+    © Copyright 2021 - 2025 <span className={styles.primary}>Accqrate</span>, All rights reserved.
+  </div>
+</div>
+
+   
     </footer>
   );
 }
+
