@@ -88,13 +88,13 @@ const languages = [
 ];
 
 const countries = [
-  { name: "Saudi Arabia", code: "SA", flag: "/images/images/flag-saudi-arabia.svg" },
-  { name: "UAE", code: "AE", flag: "/images/images/flag-uae.svg" },
-  { name: "Oman", code: "OM", flag: "/images/images/flag-oman.svg" },
-  { name: "Bahrain", code: "BH", flag: "/images/images/flag-bahrain.svg" },
-  { name: "Malaysia", code: "MY", flag: "/images/images/flag-malaysia.svg" },
-  { name: "Mauritius", code: "MU", flag: "/images/images/flag-mauritius.svg" },
-  { name: "Jordan", code: "JO", flag: "/images/images/flag-jordan.svg" },
+  { name: "Saudi Arabia", code: "SA", flag: "/images/flag-saudi-arabia.svg" },
+  { name: "UAE", code: "AE", flag: "/images/flag-uae.svg" },
+  { name: "Oman", code: "OM", flag: "/images/flag-oman.svg" },
+  { name: "Bahrain", code: "BH", flag: "/images/flag-bahrain.svg" },
+  { name: "Malaysia", code: "MY", flag: "/images/flag-malaysia.svg" },
+  { name: "Mauritius", code: "MU", flag: "/images/flag-mauritius.svg" },
+  { name: "Jordan", code: "JO", flag: "/images/flag-jordan.svg" },
 ];
 
 
@@ -242,7 +242,7 @@ const Header = () => {
           <div className="logo-container">
             <Link href="/" className="shrink-0">
               <img
-                src="/images/images/logo.svg"
+                src="/images/logo.svg"
                 alt="Accqrate Logo"
                 className="h-8 md:h-9 lg:h-10 w-auto cursor-pointer max-w-[80px] sm:max-w-[100px] md:max-w-[140px]"
               />
