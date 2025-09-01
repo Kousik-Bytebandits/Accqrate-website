@@ -3,14 +3,38 @@
 import Image from "next/image";
 
 export default function Hero() {
-  const topRow = [
-    "/images/1.png","/images/2.png","/images/3.png","/images/4.png","/images/5.png","/images/6.png",
-    "/images/7.png","/images/8.png","/images/9.png","/images/10.png","/images/11.png","/images/12.png","/images/13.png",
-  ];
-  const bottomRow = [
-    "/images/14.png","/images/15.png","/images/16.png","/images/17.png","/images/18.png","/images/19.png",
-    "/images/20.png","/images/21.png","/images/22.png","/images/23.png","/images/24.png","/images/25.png","/images/26.png",
-  ];
+const topRow = [
+  { src: "/images/1.png", name: "Education" },
+  { src: "/images/2.png", name: "Construction & Engineering" },
+  { src: "/images/3.png", name: "Logistics" },
+  { src: "/images/4.png", name: "Insurance" },
+  { src: "/images/5.png", name: "Conglomerate" },
+  { src: "/images/6.png", name: "Pharmacy" },
+  { src: "/images/7.png", name: "Energy" },
+  { src: "/images/8.png", name: "Conglomerate" },
+  { src: "/images/9.png", name: "Insurance" },
+  { src: "/images/10.png", name: "Packaging solutions" },
+  { src: "/images/11.png", name: "Food & Beverage" },
+  { src: "/images/12.png", name: "Trading" },
+  { src: "/images/13.png", name: "Chemicals" },
+];
+
+const bottomRow = [
+  { src: "/images/14.png", name: "Hospitality and Tourism" },
+  { src: "/images/15.png", name: "FMCD" },
+  { src: "/images/16.png", name: "Oil & Gas" },
+  { src: "/images/17.png", name: "Home Appliances" },
+  { src: "/images/18.png", name: "Manufacturing" },
+  { src: "/images/19.png", name: "Construction & Engineering" },
+  { src: "/images/20.png", name: "Education" },
+  { src: "/images/21.png", name: "Conglomerate" },
+  { src: "/images/22.png", name: "Electrical Industries Co." },
+  { src: "/images/23.png", name: "Aerospace & Defense" },
+  { src: "/images/24.png", name: "Retail" },
+  { src: "/images/25.png", name: "Ecommerce" },
+  { src: "/images/26.png", name: "Fashion" },
+];
+
 
   return (
     <section className="w-full font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4">
@@ -80,41 +104,58 @@ export default function Hero() {
       </div>
 
       {/* Logo Marquee */}
-      <div className=" bg-[#E6F4FF] relative -mx-4 w-screen  overflow-hidden py-6 ">
+        <div className="w-screen bg-[#E6F4FF] relative ">
+      <div className="max-w-5xl overflow-hidden py-6 mx-auto">
         {/* Fade edges */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 md:w-20 bg-gradient-to-r from-[#E6F4FF] to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 md:w-20 bg-gradient-to-l from-[#E6F4FF] to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-r from-[#E6F4FF] to-transparent " />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-l from-[#E6F4FF] to-transparent" />
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 ">
           {/* Top Row */}
           <div className="flex animate-scrollLeft w-max flex-shrink-0">
-            {[...topRow, ...topRow].map((src, i) => (
-              <Image
+            {[...topRow, ...topRow].map((logo, i) => (
+              <div
                 key={`top-${i}`}
-                src={src}
-                alt={`Company logo ${i + 1}`}
-                width={135}
-                height={48}
-                className="h-16 md:h-28 md:w-60 grayscale opacity-90 transition hover:grayscale-0 hover:opacity-100"
-              />
+                className="flex flex-col items-center mx-4"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={135}
+                  height={48}
+                  className="h-14 md:h-16 md:w-60 grayscale opacity-90 transition hover:grayscale-0 hover:opacity-100"
+                />
+                <p className="mt-2 text-xs md:text-sm text-gray-700 font-medium">
+                  {logo.name}
+                </p>
+              </div>
             ))}
           </div>
 
           {/* Bottom Row */}
           <div className="flex animate-scrollRight w-max flex-shrink-0">
-            {[...bottomRow, ...bottomRow].map((src, i) => (
-              <Image
+            {[...bottomRow, ...bottomRow].map((logo, i) => (
+              <div
                 key={`bottom-${i}`}
-                src={src}
-                alt={`Company logo ${i + 1}`}
-                width={135}
-                height={48}
-                className="h-16 md:h-28 md:w-60 grayscale opacity-90 transition hover:grayscale-0 hover:opacity-100"
-              />
-            ))}   
+                className="flex flex-col items-center mx-4"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={135}
+                  height={48}
+                  className="h-14 md:h-16 md:w-60 grayscale opacity-90 transition hover:grayscale-0 hover:opacity-100"
+                />
+                <p className="mt-2 text-xs md:text-sm text-gray-700 font-medium">
+                  {logo.name}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+    </div>
+      
     </section>
   );
 }
