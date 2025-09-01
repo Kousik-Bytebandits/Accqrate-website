@@ -63,32 +63,28 @@ export default function AutomationSection() {
 
       
       {/* Bottom Section */}
-<div className="mt-16 mx-auto px-2 font-inter ">
+<div className="mt-16 mx-auto px-2 font-inter md:max-w-5xl ">
   {/* Heading */}
   <div className="text-center mb-10 md:mb-4 md:flex md:justify-center">
-    <h2 className="text-[24px] md:text-[38px] font-semibold ">Support, Training, & </h2>
-    <h2 className="text-[24px] md:text-[38px] font-semibold text-[#1976D2] mb-6 md:ml-2"> Onboarding</h2>
+    <h2 className="text-[24px] md:text-[38px] font-semibold">
+      Support, Training, &
+    </h2>
+    <h2 className="text-[24px] md:text-[38px] font-semibold text-[#1976D2] mb-6 md:ml-2">
+      Onboarding
+    </h2>
   </div>
 
- <div>
-      <p className="text-[20px] mb-16 lg:block hidden text-center  text-base leading-relaxed">
-        Expert onboarding for ZATCA compliance software— get your team ready for
-        e-invoicing in KSA, fast.
-      </p>
-    </div>
-  {/* First Row */}
-  <div className="grid grid-cols-2 md:hidden md:grid-cols-3 gap-4 items-center mb-10">
-    {/* Left Side Text */}
-    <div>
-      <p className="text-[14px]  text-base leading-relaxed">
-        Expert onboarding for ZATCA compliance software— get your team ready for
-        e-invoicing in KSA, fast.
-      </p>
-    </div>
+  <div>
+    <p className="text-fluid-small lg:text-[20px] mb-8 md:mb-16 text-center text-base leading-relaxed">
+      Expert onboarding for ZATCA compliance software— get your team ready for
+      e-invoicing in KSA, fast.
+    </p>
+  </div>
 
-    {/* Right Side Box */}
-    <div className="relative w-full h-[250px]">
-      {/* Blue Outer */}
+  {/* Unified Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center">
+    {/* Box 1 - On Demand Training */}
+    <div className="relative w-[300px] h-[370px] md:h-[400px] md:max-w-[340px]">
       <div
         className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
         style={{
@@ -96,7 +92,6 @@ export default function AutomationSection() {
             "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
         }}
       >
-        {/* White Inner */}
         <div
           className="relative w-full h-full bg-white rounded-lg flex flex-col text-left"
           style={{
@@ -104,35 +99,42 @@ export default function AutomationSection() {
               "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
           }}
         >
-          <video
+          <div className="h-[185px] m-4 rounded-lg shadow-md md:hidden border border-grey-400">
+             <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-20 object-cover rounded-t-lg"
+            className="w-full h-[125px] mt-8 md:h-[200px] object-cover rounded-t-lg"
+          >
+            <source src="/videos/on-demand-training.mp4" type="video/mp4" />
+          </video>
+          </div>
+           <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="md:block hidden w-full h-[125px]  md:h-[200px] object-cover rounded-t-lg"
           >
             <source src="/videos/on-demand-training.mp4" type="video/mp4" />
           </video>
 
           <div className="p-2 flex-1">
-            <h3 className="font-semibold text-[14px] text-center">
+            <h3 className="font-semibold text-fluid-body text-center">
               On Demand Training
             </h3>
-            <p className="text-[#737373] text-[12px] mt-2 text-center">
+            <p className="text-[#737373] text-fluid-small mt-2 text-center">
               Learn Accqrate Books in under 60 minutes; video modules for every
               type.
             </p>
-            <p
-              
-              className="absolute bottom-1 left-2 text-[#1976D2] font-bold leading-tight text-[12px]  inline-block"
-            >
+            <p className="absolute bottom-1 left-2 md:text-fluid-body text-[#1976D2] font-bold leading-tight text-[12px] inline-block">
               Book An <br /> Appointment
             </p>
           </div>
         </div>
       </div>
 
-     
       <div className="pointer-events-none absolute inset-0 z-20">
         <div
           className="absolute inset-0 bg-[#1976D2] rounded-lg"
@@ -140,17 +142,14 @@ export default function AutomationSection() {
             clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
           }}
         />
-        <div className="absolute  right-6 bottom-1 text-white text-lg font-bold">
-          <FaArrowRightLong  className="text-[16px]" />
+        <div className="absolute right-8 bottom-2 md:right-10 md:bottom-1 text-white text-lg font-bold">
+          <FaArrowRightLong className="text-[20px] md:text-[30px]" />
         </div>
       </div>
     </div>
-  </div>
 
-  {/* Second Row */}
-  <div className="grid grid-cols-2 md:flex md:max-w-8xl md:justify-center gap-4 md:gap-16">
-    <div className="relative hidden lg:block w-full h-[250px] md:h-[400px] md:max-w-[340px]">
-      {/* Blue Outer */}
+    {/* Box 2 - Local Support */}
+    <div className="relative w-[300px] h-[370px] md:h-[400px] md:max-w-[340px]">
       <div
         className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
         style={{
@@ -158,7 +157,6 @@ export default function AutomationSection() {
             "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
         }}
       >
-        {/* White Inner */}
         <div
           className="relative w-full h-full bg-white rounded-lg flex flex-col text-left"
           style={{
@@ -166,91 +164,41 @@ export default function AutomationSection() {
               "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
           }}
         >
-          <video
+          <div className="h-[185px] m-4 rounded-lg shadow-md md:hidden border border-grey-400">
+            <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-20 md:h-[200px] object-cover rounded-t-lg"
+            className="w-full h-[125px] mt-6 md:h-[200px] object-cover rounded-t-lg"
           >
-            <source src="/videos/on-demand-training.mp4" type="video/mp4" />
+            <source src="/videos/local-support.mp4" type="video/mp4" />
           </video>
-
-          <div className="p-2 flex-1">
-            <h3 className="font-semibold text-[14px] md:text-fluid-body text-center">
-              On Demand Training
-            </h3>
-            <p className="text-[#737373] text-[12px] md:text-fluid-small mt-2 text-center">
-              Learn Accqrate Books in under 60 minutes; video modules for every
-              type.
-            </p>
-            <p
-
-              className="absolute bottom-1 left-2 md:text-fluid-body text-[#1976D2] font-bold leading-tight text-[12px]  inline-block"
-            >
-              Book An <br /> Appointment
-            </p>
           </div>
-        </div>
-      </div>
-
-     
-      <div className="pointer-events-none absolute inset-0 z-20">
-        <div
-          className="absolute inset-0 bg-[#1976D2] rounded-lg"
-          style={{
-            clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
-          }}
-        />
-        <div className="absolute  right-6 bottom-1 md:right-14 md:bottom-1 text-white text-lg font-bold">
-          <FaArrowRightLong  className="text-[16px] md:text-[30px]" />
-        </div>
-      </div>
-    </div>
-    {/* Box 1 */}
-
-    <div className="relative w-full h-[250px] md:h-[400px] md:max-w-[340px]">
-      <div
-        className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
-        style={{
-          clipPath:
-            "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
-        }}
-      >
-        <div
-          className="relative w-full h-full bg-white rounded-lg flex flex-col text-left"
-          style={{
-            clipPath:
-              "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
-          }}
-        >
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-24 md:h-[200px] object-cover rounded-t-lg "
+            className="hidden md:block w-full h-24 md:h-[200px] object-cover rounded-t-lg"
           >
             <source src="/videos/local-support.mp4" type="video/mp4" />
           </video>
 
-          <div className="p-2 flex-1 ">
-            <h3 className="font-bold text-[14px] md:text-fluid-body text-center">
+          <div className="p-2 flex-1">
+            <h3 className="font-bold text-fluid-body text-center">
               24/7 Local Support
             </h3>
-            <p className="text-[#737373] text-[12px] md:text-fluid-small mt-2 text-center">
+            <p className="text-[#737373] text-fluid-small mt-2 text-center">
               In English & Arabic—phone, WhatsApp, email, or chat.
             </p>
-            <p
-              className="absolute bottom-4 left-2 text-[#1976D2] md:text-fluid-body text-left font-bold text-[11px] mt-3 inline-block"
-            >
+            <p className="absolute bottom-4 left-2 text-[#1976D2] md:text-fluid-body text-left font-bold text-[12px] inline-block">
               +971505515388
             </p>
           </div>
         </div>
       </div>
 
-     
       <div className="pointer-events-none absolute inset-0 z-20">
         <div
           className="absolute inset-0 bg-[#1976D2] rounded-lg"
@@ -258,14 +206,14 @@ export default function AutomationSection() {
             clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
           }}
         />
-        <div className="absolute right-6 bottom-1 text-white text-sm font-bold md:right-14 md:bottom-1">
-          <FaArrowRightLong  className="text-[16px] md:text-[30px]" />
+        <div className="absolute right-8 bottom-2 md:right-10 md:bottom-1 text-white text-sm font-bold">
+          <FaArrowRightLong className="text-[20px] md:text-[30px]" />
         </div>
       </div>
     </div>
 
-    {/* Box 2 */}
-    <div className="relative w-full h-[250px] md:h-[400px] md:max-w-[340px]">
+    {/* Box 3 - Knowledge Center */}
+    <div className="relative w-[300px] h-[370px] md:h-[400px] md:max-w-[340px]">
       <div
         className="absolute inset-0 bg-[#1875D1] rounded-xl p-[2.5px]"
         style={{
@@ -280,33 +228,40 @@ export default function AutomationSection() {
               "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
           }}
         >
+          <div className="h-[185px] m-4 rounded-lg shadow-md md:hidden border border-grey-400">
+             <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-[125px] mt-6 md:h-[200px] object-cover rounded-t-lg"
+          >
+            <source src="/videos/knowledge-center.mp4" type="video/mp4" />
+          </video>
+          </div>
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-24 md:h-[200px] object-cover rounded-t-lg"
+            className="hidden md:block w-full h-24 md:h-[200px] object-cover rounded-t-lg"
           >
             <source src="/videos/knowledge-center.mp4" type="video/mp4" />
           </video>
 
           <div className="p-2 flex-1">
-            <h3 className="font-bold text-[14px] md:text-fluid-body text-center">
+            <h3 className="font-bold text-fluid-body text-center">
               Knowledge Center
             </h3>
-            <p className="text-[#737373] text-[12px] md:text-fluid-small mt-2 text-center">
+            <p className="text-[#737373] text-fluid-small mt-2 text-center">
               Step-by-step Guides for every process.
             </p>
-            <p
-
-              className="absolute bottom-1 left-2 text-[#1976D2] md:text-fluid-body font-bold leading-tight text-[12px] mt-3 inline-block"
-            >
+            <p className="absolute bottom-1 left-2 text-[#1976D2] md:text-fluid-body font-bold leading-tight text-[12px] inline-block">
               Knowledge <br /> Center
             </p>
           </div>
         </div>
       </div>
-
 
       <div className="pointer-events-none absolute inset-0 z-20">
         <div
@@ -315,13 +270,14 @@ export default function AutomationSection() {
             clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
           }}
         />
-        <div className="absolute right-6 bottom-1 text-white text-sm font-bold md:right-14 md:bottom-1">
-          <FaArrowRightLong  className="text-[16px] md:text-[30px]" />
+        <div className="absolute right-8 bottom-2 md:right-10 md:bottom-1 text-white text-sm font-bold">
+          <FaArrowRightLong className="text-[20px] md:text-[30px]" />
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

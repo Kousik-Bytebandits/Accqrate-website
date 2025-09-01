@@ -10,88 +10,17 @@ export default function FeatureSection() {
 </h2>
 
 {/* --- Shared description --- */}
-<p className="hidden lg:block mt-8 mb-12 text-[#000000B2] lg:text-fluid-body text-[14px] text-center max-w-3xl mx-auto mb-8">
+<p className=" mt-8 mb-12 text-[#000000B2] lg:text-fluid-body text-[14px] text-center max-w-3xl mx-auto mb-8">
   Accqrate Books is fully cloud-native – no complex installations, no
   specialized IT needed. Set up your accounting in minutes, not weeks.
 </p>
 
-{/* --- Mobile Layout --- */}
-<div className="block md:hidden">
-  
-  <div className="flex items-center justify-between gap-4 mb-6">
-    {/* Left text */}
-    <div className="w-1/2 px-2 ">
-      <p className="text-[#000000B2] text-[14px] ">
-        Accqrate Books is fully cloud-native – no complex installations, no
-        specialized IT needed. Set up your accounting in minutes, not weeks.
-      </p>
-    </div>
 
-    {/* Right video box */}
-    <div className="w-1/2 bg-white text-center rounded-xl shadow-md p-3 flex flex-col justify-center">
-      <video
-        className="rounded-lg w-full h-32 object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      >
-        <source src="videos/cloud-first.mp4" type="video/mp4" />
-      </video>
-      <h3 className="text-sm font-medium mt-2">Cloud-first or On-Prem</h3>
-      <p className="text-xs text-gray-600">
-        Choose cloud for instant launch, or on-premises for full data control.
-      </p>
-    </div>
-  </div>
-
-  {/* Two boxes below */}
-  <div className="grid grid-cols-2 gap-4">
-    {/* Box 1 */}
-    <div className="bg-white rounded-xl shadow-md p-3 text-center">
-      <video
-        className="rounded-lg w-full h-28 object-cover mb-2"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      >
-        <source src="videos/all-devices.mp4" type="video/mp4" />
-      </video>
-      <h3 className="text-sm font-medium">Works on all devices</h3>
-      <p className="text-xs text-gray-600">
-        Manage accounts from desktop, laptop, tablet, or mobile.
-      </p>
-    </div>
-
-    {/* Box 2 */}
-    <div className="bg-white rounded-xl shadow-md p-3 text-center">
-      <video
-        className="rounded-lg w-full h-28 object-cover mb-2"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-      >
-        <source src="videos/no-special-hardware.mp4" type="video/mp4" />
-      </video>
-      <h3 className="text-sm font-medium">No special hardware</h3>
-      <p className="text-xs text-gray-600">
-        Access your books anywhere – your data is always secure, always available.
-      </p>
-    </div>
-  </div>
-</div>
-
-{/* --- Desktop Layout --- */}
-<div className="hidden lg:flex justify-center mx-auto gap-16 ">
+<div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 ">
   {/* Card 1 */}
-  <div className="bg-white text-center w-[340px] h-[400px]  rounded-xl shadow-md p-4 flex flex-col justify-start">
+  <div className="bg-white text-center md:w-[340px] w-[320px] h-[270px] md:h-[400px]  rounded-xl shadow-md p-4 flex flex-col justify-start">
     <video
-      className="rounded-lg w-full h-[190px] object-cover mb-2"
+      className="rounded-lg w-full md:h-[190px] h-[165px] object-cover mb-2"
       autoPlay
       muted
       loop
@@ -100,16 +29,16 @@ export default function FeatureSection() {
     >
       <source src="videos/cloud-first.mp4" type="video/mp4" />
     </video>
-    <h3 className="text-[24px] mt-2 mb-6 font-medium">Cloud-first or On-Prem</h3>
-    <p className="text-[20px] text-[#808080] max-w-xl">
-      Choose cloud for instant launch,<br/> or on-premises for full <br/> data control.
+    <h3 className="lg:text-[24px] text-fluid-body mt-2 lg:mb-6 font-medium">Cloud-first or On-Prem</h3>
+    <p className="lg:text-[20px] text-fluid-small text-[#808080] max-w-xl">
+      Choose cloud for instant launch, or on-premises for full  data control.
     </p>
   </div>
 
   {/* Card 2 */}
-  <div className="bg-white text-center w-[340px] h-[400px] rounded-xl shadow-md p-4 flex flex-col justify-start">
+  <div className="bg-white text-center md:w-[340px] w-[320px] h-[270px] md:h-[400px] rounded-xl shadow-md p-4 flex flex-col justify-start">
     <video
-      className="rounded-lg w-full h-[190px] object-cover mb-2"
+      className="rounded-lg w-full md:h-[190px] h-[165px] object-cover mb-2"
       autoPlay
       muted
       loop
@@ -118,16 +47,16 @@ export default function FeatureSection() {
     >
       <source src="videos/all-devices.mp4" type="video/mp4" />
     </video>
-    <h3 className="text-[24px] mt-2 mb-6 font-medium">Works on all devices</h3>
-    <p className="text-[20px] text-[#808080] ">
-      Manage accounts from <br/> desktop, laptop, tablet, <br/> or mobile.
+    <h3 className="lg:text-[24px] text-fluid-body mt-2 lg:mb-6  font-medium">Works on all devices</h3>
+    <p className="lg:text-[20px] text-fluid-small text-[#808080] ">
+      Manage accounts from  desktop, laptop, tablet, or mobile.
     </p>
   </div>
 
   {/* Card 3 */}
-  <div className="bg-white text-center w-[340px] h-[400px] rounded-xl shadow-md p-4 flex flex-col justify-start">
+  <div className="bg-white text-center md:w-[340px] w-[320px] h-[270px] md:h-[400px] rounded-xl shadow-md p-4 flex flex-col justify-start">
     <video
-      className="rounded-lg w-full h-[190px] object-cover mb-2"
+      className="rounded-lg w-full md:h-[190px] h-[165px] object-cover mb-2"
       autoPlay
       muted
       loop
@@ -136,9 +65,9 @@ export default function FeatureSection() {
     >
       <source src="videos/no-special-hardware.mp4" type="video/mp4" />
     </video>
-    <h3 className="text-[24px] mt-2 mb-6 font-medium">No special hardware</h3>
-    <p className="text-[20px] text-[#808080]">
-      Access your books anywhere –<br/> your data is always secure,<br/> always available.
+    <h3 className="lg:text-[24px] mt-2 lg:mb-6 font-medium">No special hardware</h3>
+    <p className="lg:text-[20px] text-fluid-small text-[#808080]">
+      Access your books anywhere – your data is always secure, always available.
     </p>
   </div>
 </div>
@@ -213,14 +142,14 @@ export default function FeatureSection() {
       <div className="md:hidden mt-6 bg-[#F2F2F2] p-6 -mx-4 w-screen text-left">
         <p className="text-[14px] mb-2">
           “We set up 5 new outlets in under an hour—no IT team needed.”
-          “We transitioned our entire accounting system in one afternoon—no external consultants needed.”
+         
         </p>
         <p className="text-[12px] text-black-400 text-right">
           — Retail Owner, Jeddah
         </p>
       </div>
 
-       <div className="bg-[#F2F2F2] py-12 md:py-20 px-6 md:px-16 mt-24">
+       <div className="hidden md:block bg-[#F2F2F2] py-12 md:py-20 px-6 md:px-16 mt-24">
   <div className="max-w-5xl mx-auto">
     <p className="text-lg md:text-2xl lg:text-[30px] font-normal leading-relaxed text-gray-900">
       “We transitioned our entire accounting system in one afternoon—no external consultants needed.”
@@ -243,146 +172,26 @@ export default function FeatureSection() {
     100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing Compliance
   </h2>
 
-  {/* ----------- MOBILE LAYOUT ----------- */}
-  <div className="block lg:hidden">
-    {/* Top Row */}
-    <div className="flex justify-center items-center gap-6 mb-8">
-      {/* Left Text */}
-      <p className="w-1/2 text-left text-[16px] leading-relaxed">
-        Compliance is non-negotiable. With Accqrate Books, you’re always
-        audit-ready.
-      </p>
-
-      {/* Right Card with Video */}
-      <div className="relative group w-1/2 rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-6">
-        <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
-                        -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
-                        group-hover:top-1/2 group-hover:scale-[2.2] -z-10"></div>
-
-        <div className="transition-opacity duration-500 group-hover:opacity-0">
-          <h3 className="text-[16px] font-bold text-[#1976D2]">
-            Seamless Integration
-          </h3>
-          <img
-            className="rounded-lg w-full h-28 object-cover mb-2"
-            src="images/seamless.webp"
-            alt="Seamless Integration"
-          />
-        </div>
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 
-                        text-white opacity-0 transition-opacity duration-500 
-                        group-hover:opacity-100">
-          <h3 className="text-[16px] font-bold mb-2">Seamless Integration</h3>
-          <p className="text-[12px] leading-relaxed">
-            Phase 2 E-invoicing Integration Generate, validate and transmit XML e-invoices directly to ZATCA.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Bottom Grid with Videos */}
-    <div className="grid grid-cols-2 gap-4 mb-6">
-      {/* Digital Archive */}
-      <div className="relative group w-full h-[200px] rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-2">
-        <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
-                        -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
-                        group-hover:top-1/2 group-hover:scale-[2.2] -z-10"></div>
-
-        <div className="transition-opacity duration-500 group-hover:opacity-0">
-          <h3 className="text-[16px] font-bold text-[#1976D2] mt-2">
-            Digital Archive
-          </h3>
-          <video
-            className="rounded-lg w-full h-full object-cover p-1"
-            autoPlay muted loop playsInline preload="auto"
-          >
-            <source src="videos/digital-archive.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 
-                        text-white opacity-0 transition-opacity duration-500 
-                        group-hover:opacity-100">
-          <h3 className="text-[16px] font-bold mb-2">Digital Archive</h3>
-          <p className="text-[12px] leading-relaxed">
-            Securely store all e-invoices with audit trails and QR code integration.
-          </p>
-        </div>
-      </div>
-
-      {/* Regulation Ready */}
-      <div className="relative group w-full h-[200px] rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-2">
-        <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
-                        -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
-                        group-hover:top-1/2 group-hover:scale-[2.2] -z-10"></div>
-
-        <div className="transition-opacity duration-500 group-hover:opacity-0">
-          <h3 className="text-[16px] tracking-tight font-bold text-[#1976D2] mt-2">
-            Regulation-Ready
-          </h3>
-          <video
-            className="rounded-lg w-full h-full object-cover p-1"
-            autoPlay muted loop playsInline preload="auto"
-          >
-            <source src="videos/regulation-ready.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 
-                        text-white opacity-0 transition-opacity duration-500 
-                        group-hover:opacity-100">
-          <h3 className="text-[16px] font-bold mb-2">Regulation-Ready</h3>
-          <p className="text-[12px] leading-relaxed">
-            Real-time updates keep you in sync with KSA rules.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Bottom Two Rows */}
-    <div className="space-y-4">
-      <div className="bg-[#F3F3F3] p-4 rounded-md text-left">
-        <h4 className="text-[16px] font-semibold text-[#1976D2]">
-          Custom Invoice Templates
-        </h4>
-        <p className="text-[12px] mt-2 text-[#808080]">
-          Add your logo, adjust fields, and localize content—no developer needed.
-        </p>
-      </div>
-      <div className="bg-[#F3F3F3] p-4 rounded-md text-left">
-        <h4 className="text-[16px] font-semibold text-[#1976D2]">
-          Comprehensive Audit Trails
-        </h4>
-        <p className="text-[12px] mt-2 text-[#808080]">
-          Every transaction and e-invoice is tracked, always audit-ready for ZATCA and KSA requirements.
-        </p>
-      </div>
-    </div>
-  </div>
-
- 
-  {/* ----------- DESKTOP LAYOUT ----------- */}
-    <p className=" text-center hidden mb-16 lg:block text-[20px] leading-relaxed">
-        Compliance is non-negotiable. With Accqrate Books, you’re always
-        audit-ready.
-      </p>
-<div className="hidden lg:flex justify-center gap-16 mt-16 ">
+  <p className=" text-center  mb-8 md:mb-16 text-fluid-body lg:text-[20px] leading-relaxed">
+      Compliance is non-negotiable. With Accqrate Books, you’re always
+      audit-ready.
+    </p>
+<div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 md:mt-16 ">
 
   {/* Seamless Integration */}
-  <div className="bg-[#E4E4E4] relative group rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-6">
+  <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg text-center overflow-hidden cursor-pointer p-6">
     {/* Circle hover background */}
     <div className=" absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
     {/* Default content */}
-    <div className=" transition-opacity w-[300px] h-[350px] duration-500 group-hover:opacity-0">
-      <h4 className="text-[40px] font-normal text-[#1976D2] mb-8 leading-tight">Seamless<br/> Integration</h4>
+    <div className=" transition-opacity w-[300px] h-[260px] md:h-[350px] mx-auto duration-500 group-hover:opacity-0">
+      <h4 className="lg:text-[40px] text-fluid-body font-semibold md:font-normal mx-auto text-[#1976D2] mb-8 leading-tight">Seamless Integration</h4>
       <img
         src="images/seamless.webp"
         alt="Seamless Integration"
-        className="w-auto h-[225px] mx-auto rounded-xl object-cover"
+        className=" h-[220px] md:h-[225px] mx-auto lg:rounded-xl object-cover"
       />
     </div>
 
@@ -398,15 +207,16 @@ export default function FeatureSection() {
   </div>
 
   {/* Digital Archive */}
-  <div className="bg-[#E4E4E4] relative group rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-6">
+  <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-lg text-center overflow-hidden cursor-pointer p-6">
     <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
-    <div className="transition-opacity w-[300px] h-[350px] duration-500 group-hover:opacity-0">
-      <h4 className="text-[40px] font-normal text-[#1976D2] mb-8 leading-tight">Digital <br/> Archive</h4>
+    <div className="transition-opacity w-[300px] md:h-[350px] h-[250px] duration-500 group-hover:opacity-0">
+      <h4 className="hidden lg:block lg:text-[40px] text-fluid-body font-semibold md:font-normal  text-[#1976D2] mb-8 leading-tight">Digital <br/> Archive</h4>
+       <h4 className="lg:hidden  text-fluid-body font-semibold md:font-normal  text-[#1976D2] mb-8 leading-tight">Digital  Archive</h4>
       <video
-        className="w-auto h-[225px] mx-auto rounded-lg object-cover"
+        className=" h-[200px] md:h-[225px] mx-auto  rounded-lg object-cover"
         autoPlay muted loop playsInline preload="auto"
       >
         <source src="videos/digital-archive.mp4" type="video/mp4" />
@@ -424,15 +234,15 @@ export default function FeatureSection() {
   </div>
 
   {/* Regulation Ready */}
-  <div className="bg-[#E4E4E4] relative group rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-6">
+  <div className="md:bg-[#E4E4E4] relative group rounded-xl shadow-md text-center overflow-hidden cursor-pointer p-6">
     <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
                     -translate-x-1/2 scale-90 transition-all duration-700 ease-in-out 
                     group-hover:top-1/2 group-hover:scale-[2.2] z-0"></div>
 
-    <div className=" transition-opacity duration-500 w-[300px] h-[350px] group-hover:opacity-0">
-      <h4 className="text-[40px] font-normal text-[#1976D2] mb-8 leading-tight">Regulation-Ready</h4>
+    <div className=" transition-opacity duration-500 w-[300px] h-[250px] md:h-[350px] group-hover:opacity-0">
+      <h4 className="lg:text-[40px] font-fluid-body font-semibold md:font-normal text-[#1976D2] mb-8 leading-tight">Regulation-Ready</h4>
       <video
-        className="w-auto h-[225px] mx-auto rounded-lg object-cover"
+        className="h-[200px] md:h-[225px] mx-auto rounded-lg object-cover"
         autoPlay muted loop playsInline preload="auto"
       >
         <source src="videos/regulation-ready.mp4" type="video/mp4" />
@@ -453,20 +263,20 @@ export default function FeatureSection() {
 
 </div>
    {/* Bottom Two Rows */}
-    <div className="hidden  mt-[6%] md:flex justify-center max-w-8xl gap-20">
-      <div className="bg-[#F3F3F3] p-4 rounded-md text-left w-[490px] h-[217px]">
-        <h4 className="text-[36px] font-semibold text-[#1976D2] leading-tight">
+    <div className="  mt-[6%] flex flex-col md:flex-row mx-auto justify-center max-w-8xl gap-6 md:gap-20">
+      <div className="bg-[#F3F3F3] p-4 rounded-md text-left lg:w-[490px] h-[100px] md:h-[217px]">
+        <h4 className="lg:text-[36px] text-fluid-body font-semibold text-[#1976D2] leading-tight">
           Custom Invoice Templates
         </h4>
-        <p className="text-[16px] mt-2 text-[#808080]">
+        <p className="lg:text-[16px] text-fluid-small mt-2 text-[#808080]">
           Add your logo, adjust fields, and localize content—no developer needed.
         </p>
       </div>
-      <div className="bg-[#F3F3F3] p-4 rounded-md text-left w-[490px] h-[217px]">
-        <h4 className="text-[36px] font-semibold text-[#1976D2] leading-tight">
+      <div className="bg-[#F3F3F3] p-4 rounded-md text-left lg:w-[490px] h-[100px] md:h-[217px]">
+        <h4 className="lg:text-[36px] text-fluid-body font-semibold text-[#1976D2] leading-tight">
           Comprehensive Audit Trails
         </h4>
-        <p className="text-[16px] mt-2 text-[#808080]">
+        <p className="lg:text-[16px] text-fluid-small mt-2 text-[#808080]">
           Every transaction and e-invoice is tracked, always audit-ready for ZATCA and KSA requirements.
         </p>
       </div>
