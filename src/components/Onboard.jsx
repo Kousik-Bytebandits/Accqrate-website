@@ -16,7 +16,7 @@ export default function FeatureSection() {
     return (
       <section
         ref={onboardRef}
-        className="w-full max-w-[1440px] mx-auto font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4"
+        className="w-full max-w-[1280px] mx-auto font-inter flex flex-col items-center justify-center text-center py-10 mt-10 px-4"
       >
         {/* Heading skeletons */}
         <Skeleton height="28px" width="70%" className="mb-4 mx-auto" />
@@ -37,7 +37,7 @@ export default function FeatureSection() {
           ))}
         </div>
 
-        <div className="mt-12 bg-[#F2F2F2] font-inter -mx-4 md:mx-auto w-screen md:max-w-7xl md:rounded-lg md:h-[560px] px-6 py-10">
+        <div className="mt-12 bg-[#F2F2F2] font-inter w-full md:rounded-lg md:h-[560px] px-6 py-10">
           <Skeleton height="28px" width="70%" className="mb-4 mx-auto" />
           <Skeleton height="20px" width="50%" className="mb-8 mx-auto" />
           <div className="flex flex-col gap-4 max-w-xs md:mt-14 mx-auto md:grid md:grid-cols-3 md:max-w-5xl md:gap-12">
@@ -67,7 +67,7 @@ export default function FeatureSection() {
 
   return (
     <>
-      <div className="px-[24px] mx-auto">
+      <div className="px-[24px] max-w-[1280px] mx-auto font-inter">
         {/* Heading */}
         <h2 className="text-[24px] md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-3">
           Effortless <span className="text-[#1976D2]">Onboarding</span> &
@@ -79,7 +79,71 @@ export default function FeatureSection() {
           Accqrate Books is fully cloud-native – no complex installations, no
           specialized IT needed. Set up your accounting in minutes, not weeks.
         </p>
+        <div className="flex flex-col md:flex-row justify-center mx-auto gap-6 items-center lg:gap-16 mb-6 md:mb-8 lg:mb-10">
+          {/* Card 1 */}
+          <div className="bg-white text-center h-[347px] w-full lg:h-[360px] rounded-[20px] shadow-xl p-4 flex flex-col justify-start">
+            <video
+              className="rounded-lg md:h-[190px] h-[200px] object-cover mb-2"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src="videos/cloud-first.mp4" type="video/mp4" />
+            </video>
+            <h3 className="lg:text-[24px] mt-2 lg:mb-4 tracking-[-5%] font-medium">Cloud-first or On-Prem</h3>
+            <p className="lg:text-[18px] text-[14px] tracking-[-2%] text-[#808080] max-w-xl">
+              Choose cloud for instant launch, or on-premises for full  data control.
+            </p>
+          </div>
 
+          {/* Card 2 */}
+          <div className="bg-white text-center w-full h-[350px] lg:h-[360px] rounded-[20px] shadow-xl p-4 flex flex-col justify-start">
+            <video
+              className="rounded-lg md:h-[190px] h-[200px] object-cover mb-2"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src="videos/all-devices.mp4" type="video/mp4" />
+            </video>
+            <h3 className="lg:text-[24px] mt-2 lg:mb-4 tracking-[-5%] font-medium">Works on all devices</h3>
+            <p className="lg:text-[18px] text-[14px] tracking-[-2%] text-[#808080] max-w-xl">
+              Manage accounts from  desktop, laptop, tablet, or mobile.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-white text-center w-full h-[350px] md:h-[360px] rounded-[20px] shadow-xl p-4 flex flex-col justify-start">
+            <video
+              className="rounded-lg md:h-[190px] h-[200px] object-cover mb-2"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src="videos/no-special-hardware.mp4" type="video/mp4" />
+            </video>
+            <h3 className="lg:text-[24px] mt-2 lg:mb-4 font-medium tracking-[-5%]">No special hardware</h3>
+            <p className="lg:text-[18px] text-[14px] tracking-[-2%] text-[#808080] max-w-xl">
+              Access your books anywhere – your data is always secure, always available.
+            </p>
+          </div>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-[24px] md:text-fluid-h2 font-semibold text-center mb-4">
+          <span className="text-[#1976D2]">Zero-Friction</span> Setup
+        </h2>
+        <p className="text-center text-gray-700 text-[14px] md:text-fluid-body max-w-5xl mx-auto mb-8">
+          As your business grows, Accqrate Retail grows with you. Flip the
+          switch to add procurement, finance, HR and supply-chain modules—no
+          data migration, no downtime.
+        </p>
         {/* Accordion Section */}
         <Accordion
           type="single"
@@ -96,7 +160,7 @@ export default function FeatureSection() {
           >
             <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
               {/* Left: Icon + Title */}
-              <div className="flex flex-col items-start gap-2">
+              <div className="flex flex-col items-start gap-[20px] px-2">
                 <img
                   src="/images/Mask group.png"
                   alt="Instant Access Icon"
@@ -121,7 +185,7 @@ export default function FeatureSection() {
       w-full h-auto rounded-lg px-4 py-4"
           >
             <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
-              <div className="flex flex-col items-start gap-2">
+              <div className="flex flex-col items-start gap-[20px] px-2">
                 <img
                   src="/images/Mask group (1).png"
                   alt="Automated Data Migration Icon"
@@ -145,7 +209,7 @@ export default function FeatureSection() {
       w-full h-auto rounded-lg px-4 py-4"
           >
             <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
-              <div className="flex flex-col items-start gap-2">
+              <div className="flex flex-col items-start gap-[20px] px-2">
                 <img
                   src="/images/Mask group (2).png"
                   alt="Role based access Icon"
@@ -186,7 +250,7 @@ export default function FeatureSection() {
       </div>
 
       {/* -------- ZATCA Compliance Section -------- */}
-      <div className="mt-[46px] max-w-[1440px] mx-auto font-inter text-center px-6">
+      <div className="mt-[46px] max-w-[1280px] mx-auto font-inter text-center px-6">
         <h2 className="lg:hidden text-[24px] md:text-[24px] text-[#333333] font-semibold">
           100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
           E-Invoicing Compliance
@@ -201,10 +265,10 @@ export default function FeatureSection() {
           audit-ready.
         </p>
 
-        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[24px] md:gap-8 lg:gap-12 md:mt-[40px] ">
+        <div className="flex flex-col md:grid md:grid-cols-3 justify-center items-center md:items-stretch gap-[24px] mx-w-[1280px] mx-auto md:gap-8 lg:gap-12 md:mt-[40px] mb-6 md:mb-8 lg:mb-10">
           {/* Seamless Integration */}
-          <div className="bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
-            md:h-[360px] lg:h-[320px] xl:h-[300px] 
+          <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6
+            md:h-[251px] lg:h-[292px] w-full h-[190px]
             flex flex-col items-center justify-center text-center"
           >
             <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
@@ -215,9 +279,9 @@ export default function FeatureSection() {
             <div className="transition-opacity duration-500 
               w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
               mx-auto flex flex-col items-center justify-center 
-              group-hover:opacity-0 text-center"
+              group-hover:opacity-0 text-center p-2"
             >
-              <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body 
+              <h4 className="lg:text-[28px] xl:text-[24px] text-[20px] 
                 font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight"
               >
                 Seamless Integration
@@ -225,7 +289,7 @@ export default function FeatureSection() {
               <img
                 src="images/seamless.webp"
                 alt="Seamless Integration"
-                className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
+                className="h-[142px] md:h-[149px] lg:h-[149px]
                   mx-auto rounded-lg object-cover"
               />
             </div>
@@ -245,8 +309,8 @@ export default function FeatureSection() {
           </div>
 
           {/* Digital Archive */}
-          <div className="bg-[#E4E4E4] relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
-            md:h-[360px] lg:h-[320px] xl:h-[300px] 
+          <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-lg overflow-hidden cursor-pointer p-6 
+            md:h-[251px] lg:h-[292px] w-full h-[190px]
             flex flex-col items-center justify-center text-center"
           >
             <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
@@ -257,13 +321,14 @@ export default function FeatureSection() {
             <div className="transition-opacity duration-500 
               w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
               mx-auto flex flex-col items-center justify-center 
-              group-hover:opacity-0 text-center"
+              group-hover:opacity-0 text-center p-2"
             >
-              <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight">
+              <h4 className="lg:text-[28px] xl:text-[24px]
+                font-semibold md:font-normal text-[#1976D2] mb-4 text-[20px] leading-tight">
                 Digital Archive
               </h4>
               <video
-                className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
+                className="h-[142px] md:h-[149px] lg:h-[149px]
                   mx-auto rounded-lg object-cover"
                 autoPlay
                 muted
@@ -290,8 +355,8 @@ export default function FeatureSection() {
           </div>
 
           {/* Regulation Ready */}
-          <div className="bg-[#E4E4E4] relative group rounded-xl shadow-md overflow-hidden cursor-pointer p-6 
-            md:h-[360px] lg:h-[320px] xl:h-[300px] 
+          <div className="bg-[#F0F0F0] border border-[#737373] md:border-none relative group rounded-xl shadow-md overflow-hidden cursor-pointer p-6 
+            md:h-[251px] lg:h-[292px] w-full h-[190px]
             flex flex-col items-center justify-center text-center"
           >
             <div className="absolute top-full left-1/2 w-full h-full rounded-full bg-[#1976D2] 
@@ -302,15 +367,15 @@ export default function FeatureSection() {
             <div className="transition-opacity duration-500 
               w-full max-w-[280px] md:max-w-[300px] lg:max-w-[260px] xl:max-w-[240px] 
               mx-auto flex flex-col items-center justify-center 
-              group-hover:opacity-0 text-center"
+              group-hover:opacity-0 text-center p-2"
             >
-              <h4 className="lg:text-[28px] xl:text-[24px] text-fluid-body 
-                font-semibold md:font-normal text-[#1976D2] mb-4 leading-tight"
+              <h4 className="lg:text-[28px] xl:text-[24px] 
+                font-semibold md:font-normal text-[#1976D2] mb-4 text-[20px] leading-tight"
               >
                 Regulation-Ready
               </h4>
               <video
-                className="h-[200px] md:h-[225px] lg:h-[180px] xl:h-[160px] 
+                className="h-[142px] md:h-[149px] lg:h-[149px]
                   mx-auto rounded-lg object-cover"
                 autoPlay
                 muted
@@ -338,7 +403,7 @@ export default function FeatureSection() {
 
         {/* 100_zatcha_e-invoicing-complaince Video */}
         <video
-          className="w-full h-auto max-w-[1440px] mx-auto"
+          className="w-full h-auto max-w-[1128px] mx-auto"
           autoPlay
           muted
           loop
