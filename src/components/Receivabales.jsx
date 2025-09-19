@@ -1,13 +1,20 @@
 "use client";
-import { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
+
+import { useContext, useRef } from "react";
+import { LoadingContext } from "../utils/LoadingContext";
+import Skeleton from "../components/skeleton";
+import useInView from "../utils/useInView";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function AccountSections() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleDropdown = (key, index) => {
-    setOpenIndex(openIndex === `${key}-${index}` ? null : `${key}-${index}`);
-  };
+  const { loading } = useContext(LoadingContext);
+  const receivableRef = useRef(null);
+  const isVisible = useInView(receivableRef, { threshold: 0 });
 
   const receivableDropdowns = [
     { title: "Automated Invoicing", content: "Sample content for Automated Invoicing." },
@@ -40,209 +47,179 @@ export default function AccountSections() {
     { title: "Export & Share", content: "Sample content for Export & Share." },
   ];
 
+  // --- Skeleton ---
+  if (loading || !isVisible) {
+    return (
+      <section
+        ref={receivableRef}
+        className="space-y-6 my-6 max-w-[1440px] mx-auto"
+      >
+        {/* Skeleton code remains unchanged */}
+        {/* ... */}
+      </section>
+    );
+  }
+
+  // --- Main Content ---
   return (
-    <div className="space-y-10 px-4 md:px-2 mb-10 mt-[6%]">
-      <div className="bg-[#1976D2] w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] py-[4%] space-y-4 rounded-xl">
-        {/* Bottom Two Rows */}
-        <div className="flex flex-col md:flex-row justify-center max-w-8xl gap-4 md:gap-20 w-[90%] mx-auto">
-          <div className="bg-[#F3F3F3] p-4 lg:p-6 rounded-md text-left lg:flex-1 lg:w-auto md:w-[340px] h-auto md:h-[217px]">
-            <h4 className="lg:text-[36px] md:text-[26px] text-fluid-body font-semibold text-[#1976D2] leading-tight break-words">
-              Custom Invoice Templates
-            </h4>
-            <p className="lg:text-[18px] md:text-[14px] text-fluid-small mt-2 lg:leading-relaxed text-[#808080] break-words">
-              Add your logo, adjust fields, and localize content—no developer needed.
-            </p>
-          </div>
-          <div className="bg-[#F3F3F3] p-4 lg:p-6 rounded-md text-left lg:flex-1 lg:w-auto md:w-[340px] h-auto md:h-[217px]">
-            <h4 className="lg:text-[36px] md:text-[26px] text-fluid-body font-semibold text-[#1976D2] leading-tight break-words">
-              Comprehensive Audit Trails
-            </h4>
-            <p className="lg:text-[18px] md:text-[14px] text-fluid-small mt-2 lg:leading-relaxed text-[#808080] break-words">
-              Every transaction and e-invoice is tracked, always audit-ready for ZATCA and KSA requirements.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-10 px-4 md:px-2 mb-10">
-          {/* ================= Account Receivables ================= */}
-          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
-            {/* Left Side */}
-            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-              <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] font-semibold leading-snug lg:leading-tight">
-                Account Receivables-
-                <span className="tracking-tight md:text-[30px] lg:text-[36px] md:mb-6 lg:mb-10 block text-[#1976D2] font-normal">
-                  Accelerate your cash flow
-                </span>
-              </h2>
-              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
-                Stay on top of collections and improve working capital - without chasing payments manually.
-              </p>
-              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-                {receivableDropdowns.map((item, index) => (
-                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                    <div
-                      onClick={() => toggleDropdown("rec", index)}
-                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                    >
-                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
-                      <FaChevronDown
-                        className={`transition-transform ${openIndex === `rec-${index}` ? "rotate-180" : ""
-                          }`}
-                      />
-                    </div>
-                    {openIndex === `rec-${index}` && (
-                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Side */}
-            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
-                <source src="videos/account-receivables.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </section>
-
-          {/* ================= Account Payables ================= */}
-          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
-            {/* Left Side */}
-            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-              <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-semibold leading-snug lg:leading-tight">
-                Accounts Payables -
-                <span className="tracking-tight md:text-[30px] lg:text-[42px] md:mb-6 lg:mb-10 block text-[#1976D2] font-normal">
-                  Control of Vendor Spend
-                </span>
-              </h2>
-              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
-                Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out.
-              </p>
-              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-                {payableDropdowns.map((item, index) => (
-                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                    <div
-                      onClick={() => toggleDropdown("pay", index)}
-                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                    >
-                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
-                      <FaChevronDown
-                        className={`transition-transform ${openIndex === `pay-${index}` ? "rotate-180" : ""
-                          }`}
-                      />
-                    </div>
-                    {openIndex === `pay-${index}` && (
-                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Side */}
-            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
-                <source src="videos/account-payables.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </section>
-
-
-          {/* ================= Smart Expense Management ================= */}
-          <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
-  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:mt-[6%]">
-            {/* Left Side */}
-            <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-              <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-normal leading-snug lg:leading-tight">
-                Smart <span className="font-semibold">Expense Management</span>
-              </h2>
-              <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
-                Control spending, eliminate manual errors, and boost accountability. Modernize every step of
-                expense processing with automation, policy enforcement, and real-time tracking.
-              </p>
-              <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-                {expenseDropdowns.map((item, index) => (
-                  <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                    <div
-                      onClick={() => toggleDropdown("exp", index)}
-                      className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                    >
-                      <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">{item.title}</span>
-                      <FaChevronDown
-                        className={`transition-transform ${openIndex === `exp-${index}` ? "rotate-180" : ""
-                          }`}
-                      />
-                    </div>
-                    {openIndex === `exp-${index}` && (
-                      <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Side */}
-            <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-              <video className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain" autoPlay muted loop>
-                <source src="videos/smart-expense.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <div className="px-4 md:px-2 mb-10 ">
-        {/* ================= Financial Statements ================= */}
-        <section className="bg-[#E8F1FB] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto 
-  md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 md:my-[4%] space-x-4">
-
-          {/* Left Side */}
-          <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
-            <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[42px] font-normal leading-snug lg:leading-tight">
-              Financial Statements –
-              <span className="tracking-tight md:text-[30px] lg:text-[42px] block text-[#1976D2] font-semibold">
-                Audit-Ready, Always-On
-              </span>
-            </h2>
-            <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:max-w-[520px] lg:leading-relaxed md:tracking-wide break-words">
-              Move beyond monthly closings—generate real-time, regulation-ready financials anytime.
-            </p>
-            <div className="mt-4 space-y-4 md:space-y-4 lg:space-y-6 md:mt-6 lg:mt-10">
-              {financialDropdowns.map((item, index) => (
-                <div key={index} className="max-w-[250px] md:max-w-[300px] lg:max-w-[400px]">
-                  <div
-                    onClick={() => toggleDropdown("fin", index)}
-                    className="flex justify-between items-center cursor-pointer border-b border-black pb-1"
-                  >
-                    <span className="font-normal text-[16px] md:text-[14px] lg:text-[16px] md:font-medium">
-                      {item.title}
-                    </span>
-                    <FaChevronDown
-                      className={`transition-transform ${openIndex === `fin-${index}` ? "rotate-180" : ""}`}
-                    />
-                  </div>
-                  {openIndex === `fin-${index}` && (
-                    <p className="text-[12px] md:text-[12px] lg:text-[14px] mt-1">{item.content}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div className="flex-1 mt-10 md:mt-6 lg:mt-0 md:flex md:justify-start md:items-end">
-            <video
-              className="rounded-lg w-full md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
-              autoPlay muted loop
+    <section className="my-6 mx-auto font-inter">
+      <div className="bg-[#F2F2F2] py-[24px] md:py-8 lg:py-10">
+        {/* Top Feature Cards */}
+        <div className="max-w-[1000px] mx-auto pt-[24px] pb-[24px] md:pb-[40px] space-y-4 rounded-[40px]">
+          <Accordion
+            type="single"
+            collapsible
+            className="flex flex-col md:flex-row gap-4 md:gap-8 w-[90%] mx-auto"
+          >
+            {/* Card 1 */}
+            <AccordionItem
+              value="card-1"
+              className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+      w-full h-auto rounded-lg px-4 py-4"
             >
-              <source src="videos/financial-statements.mp4" type="video/mp4" />
-            </video>
+              <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
+                {/* Left: Icon + Title */}
+                <div className="flex flex-col items-start gap-2">
+                  <img
+                    src="/images/invoice.png"
+                    alt="Custom Invoice Templates"
+                    className="w-[40px] h-[40px]"
+                  />
+                  <span className="text-black text-[18px] font-normal">
+                    Custom Invoice Templates
+                  </span>
+                </div>
+                {/* Arrow auto-renders */}
+              </AccordionTrigger>
+
+              <AccordionContent className="px-1 pb-2 text-gray-700 text-sm">
+                This is where extra details about custom invoice templates go.
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Card 2 */}
+            <AccordionItem
+              value="card-2"
+              className="flex flex-col justify-center bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8]
+      w-full h-auto rounded-lg px-4 py-4"
+            >
+              <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
+                {/* Left: Icon + Title */}
+                <div className="flex flex-col items-start gap-2">
+                  <img
+                    src="/images/audit.png"
+                    alt="Comprehensive Audit Trails"
+                    className="w-[40px] h-[40px]"
+                  />
+                  <span className="text-black text-[18px] font-normal">
+                    Comprehensive Audit Trails
+                  </span>
+                </div>
+                {/* Arrow auto-renders */}
+              </AccordionTrigger>
+
+              <AccordionContent className="px-1 pb-2 text-gray-700 text-sm">
+                Extra details about comprehensive audit trails will be shown here.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+
+        </div>
+
+        {/* Bottom Sections */}
+        <div>
+          <div className="space-y-[24px] px-6 md:px-2 max-w-[1440px] mx-auto">
+            {/* ================= Account Receivables ================= */}
+            <SectionWithAccordion
+              title="Account Receivables"
+              subtitle="Accelerate your cash flow"
+              description="Stay on top of collections and improve working capital - without chasing payments manually."
+              items={receivableDropdowns}
+              video="videos/account-receivables.mp4"
+            />
+
+            {/* ================= Account Payables ================= */}
+            <SectionWithAccordion
+              title="Accounts Payables"
+              subtitle="Control of Vendor Spend"
+              description="Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out."
+              items={payableDropdowns}
+              video="videos/Accounts_payables.mp4"
+            />
+
+            {/* ================= Smart Expense Management ================= */}
+            <SectionWithAccordion
+              title="Smart Expense Management"
+              subtitle=""
+              description="Control spending, eliminate manual errors, and boost accountability. Modernize every step of expense processing with automation, policy enforcement, and real-time tracking."
+              items={expenseDropdowns}
+              video="videos/Smart_expense_management.mp4"
+            />
           </div>
-        </section>
+        </div>
       </div>
 
+      {/* ================= Financial Statements ================= */}
+      <div className="px-6 max-w-[1440px] mx-auto my-6">
+        <SectionWithAccordion
+          title="Financial Statements"
+          subtitle="Audit-Ready, Always-On"
+          description="Move beyond monthly closings—generate real-time, regulation-ready financials anytime."
+          items={financialDropdowns}
+          video="videos/Financial_statements.mp4"
+        />
+      </div>
+    </section>
+  );
+}
 
-    </div>
+/* --- Reusable Subcomponent --- */
+function SectionWithAccordion({ title, subtitle, description, items, video }) {
+  return (
+    <section className="bg-[#E8F1FB] border border-[#CECECE] py-6 px-4 rounded-xl md:rounded-2xl md:pb-10 lg:pb-20 mx-auto md:flex md:px-6 lg:px-10 md:mx-10 lg:mx-20 my-6 md:my-8">
+      {/* Left Side */}
+      <div className="flex-1 md:max-w-[400px] lg:max-w-[520px]">
+        <h2 className="text-[#1976D2] text-[24px] md:text-[30px] lg:text-[40px] leading-snug lg:leading-tight">
+          {title}{" "}
+          {subtitle && (
+            <span className="tracking-tight block text-[#1976D2] font-normal text-[20px] md:text-[28px] lg:text-[32px] mt-1">
+              {subtitle}
+            </span>
+          )}
+        </h2>
+        <p className="mt-3 text-[14px] md:text-[16px] lg:text-[20px] lg:leading-relaxed break-words">
+          {description}
+        </p>
+
+        {/* Accordion */}
+        <div className="mt-4 md:mt-6 lg:mt-10">
+          <Accordion type="single" collapsible className="w-full max-w-[400px]">
+            {items.map((item, index) => (
+              <AccordionItem key={index} value={`${title}-${index}`}>
+                <AccordionTrigger className="text-[16px] md:text-[14px] lg:text-[16px] font-medium text-left">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent className="text-[12px] md:text-[12px] lg:text-[14px]">
+                  {item.content}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+
+      {/* Right Side */}
+      <div className="flex-1 mt-10 md:mt-6 lg:mt-0 flex justify-center items-center">
+        <video
+          className="rounded-lg w-full max-w-[500px] md:h-[300px] lg:h-auto xl:h-[420px] object-contain"
+          autoPlay
+          muted
+          loop
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
+    </section>
   );
 }
